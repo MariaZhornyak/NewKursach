@@ -123,7 +123,7 @@
             this.EmployeesStatisticsButton.Name = "EmployeesStatisticsButton";
             this.EmployeesStatisticsButton.Size = new System.Drawing.Size(318, 66);
             this.EmployeesStatisticsButton.TabIndex = 7;
-            this.EmployeesStatisticsButton.Text = "Статистика работы сотрудников";
+            this.EmployeesStatisticsButton.Text = "Самый продуктивный сотрудник";
             this.EmployeesStatisticsButton.UseVisualStyleBackColor = true;
             this.EmployeesStatisticsButton.Click += new System.EventHandler(this.EmployeesStatisticsButton_Click);
             // 

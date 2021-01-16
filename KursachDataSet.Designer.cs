@@ -1877,7 +1877,7 @@ namespace NewKursach {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public SchedulePointRow AddSchedulePointRow(VisitsRow parentVisitsRowByFK_SchedulePoint_Visits, EmployeesRow parentEmployeesRowByFK_SchedulePoint_Employees, System.TimeSpan StartTime) {
+            public SchedulePointRow AddSchedulePointRow(VisitsRow parentVisitsRowByFK_SchedulePoint_Visits, EmployeesRow parentEmployeesRowByFK_SchedulePoint_Employees, System.DateTime StartTime) {
                 SchedulePointRow rowSchedulePointRow = ((SchedulePointRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
@@ -1934,7 +1934,7 @@ namespace NewKursach {
                 base.Columns.Add(this.columnVisitID);
                 this.columnEmployeeID = new global::System.Data.DataColumn("EmployeeID", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnEmployeeID);
-                this.columnStartTime = new global::System.Data.DataColumn("StartTime", typeof(global::System.TimeSpan), null, global::System.Data.MappingType.Element);
+                this.columnStartTime = new global::System.Data.DataColumn("StartTime", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnStartTime);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnPointID}, true));
@@ -3260,10 +3260,10 @@ namespace NewKursach {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public System.TimeSpan StartTime {
+            public System.DateTime StartTime {
                 get {
                     try {
-                        return ((global::System.TimeSpan)(this[this.tableSchedulePoint.StartTimeColumn]));
+                        return ((global::System.DateTime)(this[this.tableSchedulePoint.StartTimeColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("The value for column \'StartTime\' in table \'SchedulePoint\' is DBNull.", e);
@@ -5687,34 +5687,35 @@ SELECT EmployeeID, EmployeeName, PhoneNumber, BeginningYear, DOB FROM Employees 
             tableMapping.ColumnMappings.Add("SpecialityID", "SpecialityID");
             tableMapping.ColumnMappings.Add("EmloyeeID", "EmployeeID");
             tableMapping.ColumnMappings.Add("ServiceID", "ServiceID");
+            tableMapping.ColumnMappings.Add("EmployeeID", "EmployeeID");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[EmployeeSpeciality] WHERE (([SpecialityID] = @Original_SpecialityID) AND ((@IsNull_EmloyeeID = 1 AND [EmloyeeID] IS NULL) OR ([EmloyeeID] = @Original_EmloyeeID)) AND ((@IsNull_ServiceID = 1 AND [ServiceID] IS NULL) OR ([ServiceID] = @Original_ServiceID)))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[EmployeeSpeciality] WHERE (([SpecialityID] = @Original_SpecialityID) AND ((@IsNull_EmployeeID = 1 AND [EmployeeID] IS NULL) OR ([EmployeeID] = @Original_EmployeeID)) AND ((@IsNull_ServiceID = 1 AND [ServiceID] IS NULL) OR ([ServiceID] = @Original_ServiceID)))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_SpecialityID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SpecialityID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_EmloyeeID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "EmloyeeID", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_EmloyeeID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "EmloyeeID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_EmployeeID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "EmployeeID", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_EmployeeID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "EmployeeID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_ServiceID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ServiceID", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ServiceID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ServiceID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[EmployeeSpeciality] ([EmloyeeID], [ServiceID]) VALUES (@Emloye" +
-                "eID, @ServiceID);\r\nSELECT SpecialityID, EmloyeeID, ServiceID FROM EmployeeSpecia" +
-                "lity WHERE (SpecialityID = SCOPE_IDENTITY())";
+            this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[EmployeeSpeciality] ([EmployeeID], [ServiceID]) VALUES (@Emplo" +
+                "yeeID, @ServiceID);\r\nSELECT SpecialityID, EmployeeID, ServiceID FROM EmployeeSpe" +
+                "ciality WHERE (SpecialityID = SCOPE_IDENTITY())";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@EmloyeeID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "EmloyeeID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@EmployeeID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "EmployeeID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ServiceID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ServiceID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[EmployeeSpeciality] SET [EmloyeeID] = @EmloyeeID, [ServiceID] = @ServiceID WHERE (([SpecialityID] = @Original_SpecialityID) AND ((@IsNull_EmloyeeID = 1 AND [EmloyeeID] IS NULL) OR ([EmloyeeID] = @Original_EmloyeeID)) AND ((@IsNull_ServiceID = 1 AND [ServiceID] IS NULL) OR ([ServiceID] = @Original_ServiceID)));
-SELECT SpecialityID, EmloyeeID, ServiceID FROM EmployeeSpeciality WHERE (SpecialityID = @SpecialityID)";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[EmployeeSpeciality] SET [EmployeeID] = @EmployeeID, [ServiceID] = @ServiceID WHERE (([SpecialityID] = @Original_SpecialityID) AND ((@IsNull_EmployeeID = 1 AND [EmployeeID] IS NULL) OR ([EmployeeID] = @Original_EmployeeID)) AND ((@IsNull_ServiceID = 1 AND [ServiceID] IS NULL) OR ([ServiceID] = @Original_ServiceID)));
+SELECT SpecialityID, EmployeeID, ServiceID FROM EmployeeSpeciality WHERE (SpecialityID = @SpecialityID)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@EmloyeeID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "EmloyeeID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@EmployeeID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "EmployeeID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ServiceID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ServiceID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_SpecialityID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SpecialityID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_EmloyeeID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "EmloyeeID", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_EmloyeeID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "EmloyeeID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_EmployeeID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "EmployeeID", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_EmployeeID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "EmployeeID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_ServiceID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ServiceID", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ServiceID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ServiceID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@SpecialityID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "SpecialityID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -5733,7 +5734,7 @@ SELECT SpecialityID, EmloyeeID, ServiceID FROM EmployeeSpeciality WHERE (Special
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT SpecialityID, EmloyeeID, ServiceID FROM dbo.EmployeeSpeciality";
+            this._commandCollection[0].CommandText = "SELECT SpecialityID, EmployeeID, ServiceID FROM dbo.EmployeeSpeciality";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -5794,11 +5795,11 @@ SELECT SpecialityID, EmloyeeID, ServiceID FROM EmployeeSpeciality WHERE (Special
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_SpecialityID, global::System.Nullable<int> Original_EmloyeeID, global::System.Nullable<int> Original_ServiceID) {
+        public virtual int Delete(int Original_SpecialityID, global::System.Nullable<int> Original_EmployeeID, global::System.Nullable<int> Original_ServiceID) {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_SpecialityID));
-            if ((Original_EmloyeeID.HasValue == true)) {
+            if ((Original_EmployeeID.HasValue == true)) {
                 this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[2].Value = ((int)(Original_EmloyeeID.Value));
+                this.Adapter.DeleteCommand.Parameters[2].Value = ((int)(Original_EmployeeID.Value));
             }
             else {
                 this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(1));
@@ -5832,9 +5833,9 @@ SELECT SpecialityID, EmloyeeID, ServiceID FROM EmployeeSpeciality WHERE (Special
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(global::System.Nullable<int> EmloyeeID, global::System.Nullable<int> ServiceID) {
-            if ((EmloyeeID.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[0].Value = ((int)(EmloyeeID.Value));
+        public virtual int Insert(global::System.Nullable<int> EmployeeID, global::System.Nullable<int> ServiceID) {
+            if ((EmployeeID.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[0].Value = ((int)(EmployeeID.Value));
             }
             else {
                 this.Adapter.InsertCommand.Parameters[0].Value = global::System.DBNull.Value;
@@ -5865,9 +5866,9 @@ SELECT SpecialityID, EmloyeeID, ServiceID FROM EmployeeSpeciality WHERE (Special
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(global::System.Nullable<int> EmloyeeID, global::System.Nullable<int> ServiceID, int Original_SpecialityID, global::System.Nullable<int> Original_EmloyeeID, global::System.Nullable<int> Original_ServiceID, int SpecialityID) {
-            if ((EmloyeeID.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(EmloyeeID.Value));
+        public virtual int Update(global::System.Nullable<int> EmployeeID, global::System.Nullable<int> ServiceID, int Original_SpecialityID, global::System.Nullable<int> Original_EmployeeID, global::System.Nullable<int> Original_ServiceID, int SpecialityID) {
+            if ((EmployeeID.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(EmployeeID.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[0].Value = global::System.DBNull.Value;
@@ -5879,9 +5880,9 @@ SELECT SpecialityID, EmloyeeID, ServiceID FROM EmployeeSpeciality WHERE (Special
                 this.Adapter.UpdateCommand.Parameters[1].Value = global::System.DBNull.Value;
             }
             this.Adapter.UpdateCommand.Parameters[2].Value = ((int)(Original_SpecialityID));
-            if ((Original_EmloyeeID.HasValue == true)) {
+            if ((Original_EmployeeID.HasValue == true)) {
                 this.Adapter.UpdateCommand.Parameters[3].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[4].Value = ((int)(Original_EmloyeeID.Value));
+                this.Adapter.UpdateCommand.Parameters[4].Value = ((int)(Original_EmployeeID.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[3].Value = ((object)(1));
@@ -5916,8 +5917,8 @@ SELECT SpecialityID, EmloyeeID, ServiceID FROM EmployeeSpeciality WHERE (Special
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(global::System.Nullable<int> EmloyeeID, global::System.Nullable<int> ServiceID, int Original_SpecialityID, global::System.Nullable<int> Original_EmloyeeID, global::System.Nullable<int> Original_ServiceID) {
-            return this.Update(EmloyeeID, ServiceID, Original_SpecialityID, Original_EmloyeeID, Original_ServiceID, Original_SpecialityID);
+        public virtual int Update(global::System.Nullable<int> EmployeeID, global::System.Nullable<int> ServiceID, int Original_SpecialityID, global::System.Nullable<int> Original_EmployeeID, global::System.Nullable<int> Original_ServiceID) {
+            return this.Update(EmployeeID, ServiceID, Original_SpecialityID, Original_EmployeeID, Original_ServiceID, Original_SpecialityID);
         }
     }
     

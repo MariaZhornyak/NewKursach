@@ -55,7 +55,7 @@ SELECT CategoryID, CategoryName FROM Categories WHERE (CategoryID = @CategoryID)
               <Mapping SourceColumn="CategoryName" DataSetColumn="CategoryName" />
             </Mappings>
             <Sources>
-              <DbSource ConnectionRef="KursachConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="DeleteQuery" Modifier="Public" Name="DeleteQuery" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy2" UserSourceName="DeleteQuery">
+              <DbSource ConnectionRef="KursachConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="DeleteQuery" Modifier="Public" Name="DeleteQuery" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="DeleteQuery">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>DELETE FROM [dbo].[Categories] WHERE [CategoryID] = @Id</CommandText>
@@ -75,7 +75,7 @@ SELECT CategoryID, CategoryName FROM Categories WHERE (CategoryID = @CategoryID)
                   </DbCommand>
                 </SelectCommand>
               </DbSource>
-              <DbSource ConnectionRef="KursachConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="InsertQuery" Modifier="Public" Name="InsertQuery" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="InsertQuery">
+              <DbSource ConnectionRef="KursachConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="InsertQuery" Modifier="Public" Name="InsertQuery" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="InsertQuery">
                 <InsertCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>INSERT INTO [dbo].[Categories] ([CategoryName]) VALUES (@CategoryName);
@@ -86,7 +86,7 @@ SELECT CategoryID, CategoryName FROM Categories WHERE (CategoryID = @CategoryID)
                   </DbCommand>
                 </InsertCommand>
               </DbSource>
-              <DbSource ConnectionRef="KursachConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="UpdateQuery" Modifier="Public" Name="UpdateQuery" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="UpdateQuery">
+              <DbSource ConnectionRef="KursachConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="UpdateQuery" Modifier="Public" Name="UpdateQuery" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy2" UserSourceName="UpdateQuery">
                 <UpdateCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>UPDATE [dbo].[Categories] SET [CategoryName] = @CategoryName WHERE [CategoryID] = @Original_CategoryID</CommandText>
@@ -351,11 +351,11 @@ SELECT EmployeeID, EmployeeName, PhoneNumber, BeginningYear, DOB FROM Employees 
               <DbSource ConnectionRef="KursachConnectionString (Settings)" DbObjectName="Kursach.dbo.EmployeeSpeciality" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>DELETE FROM [dbo].[EmployeeSpeciality] WHERE (([SpecialityID] = @Original_SpecialityID) AND ((@IsNull_EmloyeeID = 1 AND [EmloyeeID] IS NULL) OR ([EmloyeeID] = @Original_EmloyeeID)) AND ((@IsNull_ServiceID = 1 AND [ServiceID] IS NULL) OR ([ServiceID] = @Original_ServiceID)))</CommandText>
+                    <CommandText>DELETE FROM [dbo].[EmployeeSpeciality] WHERE (([SpecialityID] = @Original_SpecialityID) AND ((@IsNull_EmployeeID = 1 AND [EmployeeID] IS NULL) OR ([EmployeeID] = @Original_EmployeeID)) AND ((@IsNull_ServiceID = 1 AND [ServiceID] IS NULL) OR ([ServiceID] = @Original_ServiceID)))</CommandText>
                     <Parameters>
                       <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_SpecialityID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="SpecialityID" SourceColumnNullMapping="false" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_EmloyeeID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="EmloyeeID" SourceColumnNullMapping="true" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_EmloyeeID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="EmloyeeID" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_EmployeeID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="EmployeeID" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_EmployeeID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="EmployeeID" SourceColumnNullMapping="false" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_ServiceID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="ServiceID" SourceColumnNullMapping="true" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_ServiceID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="ServiceID" SourceColumnNullMapping="false" SourceVersion="Original" />
                     </Parameters>
@@ -363,30 +363,30 @@ SELECT EmployeeID, EmployeeName, PhoneNumber, BeginningYear, DOB FROM Employees 
                 </DeleteCommand>
                 <InsertCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>INSERT INTO [dbo].[EmployeeSpeciality] ([EmloyeeID], [ServiceID]) VALUES (@EmloyeeID, @ServiceID);
-SELECT SpecialityID, EmloyeeID, ServiceID FROM EmployeeSpeciality WHERE (SpecialityID = SCOPE_IDENTITY())</CommandText>
+                    <CommandText>INSERT INTO [dbo].[EmployeeSpeciality] ([EmployeeID], [ServiceID]) VALUES (@EmployeeID, @ServiceID);
+SELECT SpecialityID, EmployeeID, ServiceID FROM EmployeeSpeciality WHERE (SpecialityID = SCOPE_IDENTITY())</CommandText>
                     <Parameters>
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@EmloyeeID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="EmloyeeID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@EmployeeID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="EmployeeID" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@ServiceID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="ServiceID" SourceColumnNullMapping="false" SourceVersion="Current" />
                     </Parameters>
                   </DbCommand>
                 </InsertCommand>
                 <SelectCommand>
-                  <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>SELECT SpecialityID, EmloyeeID, ServiceID FROM dbo.EmployeeSpeciality</CommandText>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT SpecialityID, EmployeeID, ServiceID FROM dbo.EmployeeSpeciality</CommandText>
                     <Parameters />
                   </DbCommand>
                 </SelectCommand>
                 <UpdateCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>UPDATE [dbo].[EmployeeSpeciality] SET [EmloyeeID] = @EmloyeeID, [ServiceID] = @ServiceID WHERE (([SpecialityID] = @Original_SpecialityID) AND ((@IsNull_EmloyeeID = 1 AND [EmloyeeID] IS NULL) OR ([EmloyeeID] = @Original_EmloyeeID)) AND ((@IsNull_ServiceID = 1 AND [ServiceID] IS NULL) OR ([ServiceID] = @Original_ServiceID)));
-SELECT SpecialityID, EmloyeeID, ServiceID FROM EmployeeSpeciality WHERE (SpecialityID = @SpecialityID)</CommandText>
+                    <CommandText>UPDATE [dbo].[EmployeeSpeciality] SET [EmployeeID] = @EmployeeID, [ServiceID] = @ServiceID WHERE (([SpecialityID] = @Original_SpecialityID) AND ((@IsNull_EmployeeID = 1 AND [EmployeeID] IS NULL) OR ([EmployeeID] = @Original_EmployeeID)) AND ((@IsNull_ServiceID = 1 AND [ServiceID] IS NULL) OR ([ServiceID] = @Original_ServiceID)));
+SELECT SpecialityID, EmployeeID, ServiceID FROM EmployeeSpeciality WHERE (SpecialityID = @SpecialityID)</CommandText>
                     <Parameters>
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@EmloyeeID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="EmloyeeID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@EmployeeID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="EmployeeID" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@ServiceID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="ServiceID" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_SpecialityID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="SpecialityID" SourceColumnNullMapping="false" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_EmloyeeID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="EmloyeeID" SourceColumnNullMapping="true" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_EmloyeeID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="EmloyeeID" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_EmployeeID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="EmployeeID" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_EmployeeID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="EmployeeID" SourceColumnNullMapping="false" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_ServiceID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="ServiceID" SourceColumnNullMapping="true" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_ServiceID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="ServiceID" SourceColumnNullMapping="false" SourceVersion="Original" />
                       <Parameter AllowDbNull="false" AutogeneratedName="SpecialityID" ColumnName="SpecialityID" DataSourceName="Kursach.dbo.EmployeeSpeciality" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@SpecialityID" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="SpecialityID" SourceColumnNullMapping="false" SourceVersion="Current" />
@@ -399,6 +399,7 @@ SELECT SpecialityID, EmloyeeID, ServiceID FROM EmployeeSpeciality WHERE (Special
               <Mapping SourceColumn="SpecialityID" DataSetColumn="SpecialityID" />
               <Mapping SourceColumn="EmloyeeID" DataSetColumn="EmployeeID" />
               <Mapping SourceColumn="ServiceID" DataSetColumn="ServiceID" />
+              <Mapping SourceColumn="EmployeeID" DataSetColumn="EmployeeID" />
             </Mappings>
             <Sources />
           </TableAdapter>
@@ -737,7 +738,7 @@ SELECT VisitID, ClientID, SpecialityID FROM Visits WHERE (VisitID = @VisitID)</C
               <xs:element name="PointID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnPointID" msprop:Generator_ColumnPropNameInRow="PointID" msprop:Generator_ColumnPropNameInTable="PointIDColumn" msprop:Generator_UserColumnName="PointID" type="xs:int" />
               <xs:element name="VisitID" msprop:Generator_ColumnVarNameInTable="columnVisitID" msprop:Generator_ColumnPropNameInRow="VisitID" msprop:Generator_ColumnPropNameInTable="VisitIDColumn" msprop:Generator_UserColumnName="VisitID" type="xs:int" minOccurs="0" />
               <xs:element name="EmployeeID" msprop:Generator_ColumnVarNameInTable="columnEmployeeID" msprop:Generator_ColumnPropNameInRow="EmployeeID" msprop:Generator_ColumnPropNameInTable="EmployeeIDColumn" msprop:Generator_UserColumnName="EmployeeID" type="xs:int" minOccurs="0" />
-              <xs:element name="StartTime" msprop:Generator_ColumnVarNameInTable="columnStartTime" msprop:Generator_ColumnPropNameInRow="StartTime" msprop:Generator_ColumnPropNameInTable="StartTimeColumn" msprop:Generator_UserColumnName="StartTime" type="xs:duration" minOccurs="0" />
+              <xs:element name="StartTime" msprop:Generator_ColumnVarNameInTable="columnStartTime" msprop:Generator_ColumnPropNameInRow="StartTime" msprop:Generator_ColumnPropNameInTable="StartTimeColumn" msprop:Generator_UserColumnName="StartTime" type="xs:dateTime" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>

@@ -46,11 +46,9 @@
             this.dOBDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.employeesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.kursachDataSet = new NewKursach.KursachDataSet();
-            this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.name_textBox = new System.Windows.Forms.TextBox();
+            this.nameTextBox = new System.Windows.Forms.TextBox();
             this.phoneNumberTextBox = new System.Windows.Forms.TextBox();
-            this.nameTextBox2 = new System.Windows.Forms.TextBox();
             this.buttonSearch = new System.Windows.Forms.Button();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.bindingNavigator1 = new System.Windows.Forms.BindingNavigator(this.components);
@@ -66,7 +64,16 @@
             this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.employeesTableAdapter = new NewKursach.KursachDataSetTableAdapters.EmployeesTableAdapter();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.textBoxFromYear = new System.Windows.Forms.TextBox();
+            this.textBoxForYear = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.textBoxToBeginningYear = new System.Windows.Forms.TextBox();
+            this.textBoxFromBeginningYear = new System.Windows.Forms.TextBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.buttonSchedule = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.employeesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.kursachDataSet)).BeginInit();
@@ -223,17 +230,6 @@
             this.kursachDataSet.DataSetName = "KursachDataSet";
             this.kursachDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Palatino Linotype", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label6.ForeColor = System.Drawing.Color.Maroon;
-            this.label6.Location = new System.Drawing.Point(506, 386);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(74, 28);
-            this.label6.TabIndex = 19;
-            this.label6.Text = "Имя:  ";
-            // 
             // label7
             // 
             this.label7.AutoSize = true;
@@ -241,16 +237,16 @@
             this.label7.ForeColor = System.Drawing.Color.Maroon;
             this.label7.Location = new System.Drawing.Point(389, 434);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(191, 28);
+            this.label7.Size = new System.Drawing.Size(177, 28);
             this.label7.TabIndex = 20;
-            this.label7.Text = "Дата рождения:  ";
+            this.label7.Text = "Год рождения:  ";
             // 
-            // name_textBox
+            // nameTextBox
             // 
-            this.name_textBox.Location = new System.Drawing.Point(109, 394);
-            this.name_textBox.Name = "name_textBox";
-            this.name_textBox.Size = new System.Drawing.Size(255, 20);
-            this.name_textBox.TabIndex = 21;
+            this.nameTextBox.Location = new System.Drawing.Point(109, 394);
+            this.nameTextBox.Name = "nameTextBox";
+            this.nameTextBox.Size = new System.Drawing.Size(255, 20);
+            this.nameTextBox.TabIndex = 21;
             // 
             // phoneNumberTextBox
             // 
@@ -259,13 +255,6 @@
             this.phoneNumberTextBox.Size = new System.Drawing.Size(255, 20);
             this.phoneNumberTextBox.TabIndex = 22;
             this.phoneNumberTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.phoneNumberTextBox_KeyPress);
-            // 
-            // nameTextBox2
-            // 
-            this.nameTextBox2.Location = new System.Drawing.Point(586, 394);
-            this.nameTextBox2.Name = "nameTextBox2";
-            this.nameTextBox2.Size = new System.Drawing.Size(255, 20);
-            this.nameTextBox2.TabIndex = 23;
             // 
             // buttonSearch
             // 
@@ -412,12 +401,102 @@
             // 
             this.employeesTableAdapter.ClearBeforeFill = true;
             // 
-            // dateTimePicker1
+            // textBoxFromYear
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(586, 439);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(255, 20);
-            this.dateTimePicker1.TabIndex = 28;
+            this.textBoxFromYear.Location = new System.Drawing.Point(625, 442);
+            this.textBoxFromYear.Name = "textBoxFromYear";
+            this.textBoxFromYear.Size = new System.Drawing.Size(68, 20);
+            this.textBoxFromYear.TabIndex = 28;
+            this.textBoxFromYear.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxFromYear_KeyPress);
+            // 
+            // textBoxForYear
+            // 
+            this.textBoxForYear.Location = new System.Drawing.Point(773, 442);
+            this.textBoxForYear.Name = "textBoxForYear";
+            this.textBoxForYear.Size = new System.Drawing.Size(68, 20);
+            this.textBoxForYear.TabIndex = 29;
+            this.textBoxForYear.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxForYear_KeyPress);
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Palatino Linotype", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label8.ForeColor = System.Drawing.Color.Maroon;
+            this.label8.Location = new System.Drawing.Point(571, 434);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(37, 28);
+            this.label8.TabIndex = 30;
+            this.label8.Text = "от";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Palatino Linotype", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label9.ForeColor = System.Drawing.Color.Maroon;
+            this.label9.Location = new System.Drawing.Point(715, 434);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(37, 28);
+            this.label9.TabIndex = 31;
+            this.label9.Text = "до";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Palatino Linotype", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label6.ForeColor = System.Drawing.Color.Maroon;
+            this.label6.Location = new System.Drawing.Point(715, 386);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(37, 28);
+            this.label6.TabIndex = 36;
+            this.label6.Text = "до";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Palatino Linotype", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label10.ForeColor = System.Drawing.Color.Maroon;
+            this.label10.Location = new System.Drawing.Point(571, 386);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(37, 28);
+            this.label10.TabIndex = 35;
+            this.label10.Text = "от";
+            // 
+            // textBoxToBeginningYear
+            // 
+            this.textBoxToBeginningYear.Location = new System.Drawing.Point(773, 394);
+            this.textBoxToBeginningYear.Name = "textBoxToBeginningYear";
+            this.textBoxToBeginningYear.Size = new System.Drawing.Size(68, 20);
+            this.textBoxToBeginningYear.TabIndex = 34;
+            // 
+            // textBoxFromBeginningYear
+            // 
+            this.textBoxFromBeginningYear.Location = new System.Drawing.Point(625, 394);
+            this.textBoxFromBeginningYear.Name = "textBoxFromBeginningYear";
+            this.textBoxFromBeginningYear.Size = new System.Drawing.Size(68, 20);
+            this.textBoxFromBeginningYear.TabIndex = 33;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Palatino Linotype", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label11.ForeColor = System.Drawing.Color.Maroon;
+            this.label11.Location = new System.Drawing.Point(424, 386);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(141, 28);
+            this.label11.TabIndex = 32;
+            this.label11.Text = "Год начала:  ";
+            // 
+            // buttonSchedule
+            // 
+            this.buttonSchedule.Font = new System.Drawing.Font("MV Boli", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonSchedule.ForeColor = System.Drawing.Color.Maroon;
+            this.buttonSchedule.Location = new System.Drawing.Point(325, 24);
+            this.buttonSchedule.Name = "buttonSchedule";
+            this.buttonSchedule.Size = new System.Drawing.Size(242, 54);
+            this.buttonSchedule.TabIndex = 37;
+            this.buttonSchedule.Text = "Расписание";
+            this.buttonSchedule.UseVisualStyleBackColor = true;
+            this.buttonSchedule.Click += new System.EventHandler(this.buttonSchedule_Click);
             // 
             // EmployeeFrom
             // 
@@ -425,15 +504,22 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightPink;
             this.ClientSize = new System.Drawing.Size(868, 562);
-            this.Controls.Add(this.dateTimePicker1);
+            this.Controls.Add(this.buttonSchedule);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.label10);
+            this.Controls.Add(this.textBoxToBeginningYear);
+            this.Controls.Add(this.textBoxFromBeginningYear);
+            this.Controls.Add(this.label11);
+            this.Controls.Add(this.label9);
+            this.Controls.Add(this.label8);
+            this.Controls.Add(this.textBoxForYear);
+            this.Controls.Add(this.textBoxFromYear);
             this.Controls.Add(this.bindingNavigator1);
             this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.buttonSearch);
-            this.Controls.Add(this.nameTextBox2);
             this.Controls.Add(this.phoneNumberTextBox);
-            this.Controls.Add(this.name_textBox);
+            this.Controls.Add(this.nameTextBox);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.label6);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label2);
@@ -475,11 +561,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn phoneNumberDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn beginningYearDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn dOBDataGridViewTextBoxColumn;
-        private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox name_textBox;
+        private System.Windows.Forms.TextBox nameTextBox;
         private System.Windows.Forms.TextBox phoneNumberTextBox;
-        private System.Windows.Forms.TextBox nameTextBox2;
         private System.Windows.Forms.Button buttonSearch;
         private System.Windows.Forms.CheckBox checkBox1;
         private System.Windows.Forms.BindingNavigator bindingNavigator1;
@@ -494,6 +578,15 @@
         private System.Windows.Forms.ToolStripButton bindingNavigatorMoveNextItem;
         private System.Windows.Forms.ToolStripButton bindingNavigatorMoveLastItem;
         private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator2;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.TextBox textBoxFromYear;
+        private System.Windows.Forms.TextBox textBoxForYear;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.TextBox textBoxToBeginningYear;
+        private System.Windows.Forms.TextBox textBoxFromBeginningYear;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Button buttonSchedule;
     }
 }

@@ -59,9 +59,9 @@ namespace NewKursach
             newForm.Show();
         }
 
-        private void reminderButton_Click(object sender, EventArgs e)
+        private void button4_Click(object sender, EventArgs e)
         {
-            EmailForm newForm = new EmailForm();
+            VisitsForm newForm = new VisitsForm();
             newForm.Show();
         }
     }

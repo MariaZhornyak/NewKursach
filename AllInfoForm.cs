@@ -7,11 +7,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace NewKursach
 {
     public partial class AllInfoForm : Form
     {
+        const string ConnectionString = @"Data Source=desktop-lmqqmnu;Initial Catalog=Kursach;Integrated Security=True";
+
         public AllInfoForm()
         {
             InitializeComponent();
@@ -22,7 +25,7 @@ namespace NewKursach
             this.visitsTableAdapter.Fill(this.kursachDataSet.Visits);
             this.servicesTableAdapter.Fill(this.kursachDataSet.Services);
             this.schedulePointTableAdapter.Fill(this.kursachDataSet.SchedulePoint);
-            // this.employeeSpecialityTableAdapter.Fill(this.kursachDataSet.EmployeeSpeciality);
+            this.employeeSpecialityTableAdapter.Fill(this.kursachDataSet.EmployeeSpeciality);
             this.employeesTableAdapter.Fill(this.kursachDataSet.Employees);
             this.clientsTableAdapter.Fill(this.kursachDataSet.Clients);
             this.categoriesTableAdapter.Fill(this.kursachDataSet.Categories);
@@ -88,6 +91,13 @@ namespace NewKursach
             employeeSpecialityTableAdapter.Update(kursachDataSet);
             servicesTableAdapter.Update(kursachDataSet);
             schedulePointTableAdapter.Update(kursachDataSet);
+        }
+
+        private void услугиСпециалистаToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            bindingNavigator3.BindingSource = employeeSpecialityBindingSource;
+            dataGridView6.DataSource = employeeSpecialityBindingSource;
+            label1.Text = "Услуги специалистов";
         }
     }
 }

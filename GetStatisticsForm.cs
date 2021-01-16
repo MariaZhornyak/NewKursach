@@ -14,6 +14,7 @@ namespace NewKursach
     public partial class GetStatisticsForm : Form
     {
         const string ConnectionString = @"Data Source=desktop-lmqqmnu;Initial Catalog=Kursach;Integrated Security=True";
+
         public GetStatisticsForm()
         {
             InitializeComponent();
@@ -35,7 +36,6 @@ namespace NewKursach
             {
                 MessageBox.Show(@"Error: " + ex.Message);
             }
-
         }
 
         private void ClearButton_Click(object sender, EventArgs e)

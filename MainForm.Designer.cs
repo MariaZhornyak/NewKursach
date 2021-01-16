@@ -36,7 +36,7 @@
             this.AllInfoButton = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
-            this.reminderButton = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -54,7 +54,7 @@
             // 
             this.button1.Font = new System.Drawing.Font("Palatino Linotype", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.button1.ForeColor = System.Drawing.Color.Maroon;
-            this.button1.Location = new System.Drawing.Point(93, 82);
+            this.button1.Location = new System.Drawing.Point(23, 82);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(252, 56);
             this.button1.TabIndex = 1;
@@ -66,7 +66,7 @@
             // 
             this.employee_button.Font = new System.Drawing.Font("Palatino Linotype", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.employee_button.ForeColor = System.Drawing.Color.Maroon;
-            this.employee_button.Location = new System.Drawing.Point(93, 144);
+            this.employee_button.Location = new System.Drawing.Point(23, 144);
             this.employee_button.Name = "employee_button";
             this.employee_button.Size = new System.Drawing.Size(252, 56);
             this.employee_button.TabIndex = 3;
@@ -78,7 +78,7 @@
             // 
             this.services_button.Font = new System.Drawing.Font("Palatino Linotype", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.services_button.ForeColor = System.Drawing.Color.Maroon;
-            this.services_button.Location = new System.Drawing.Point(93, 206);
+            this.services_button.Location = new System.Drawing.Point(23, 206);
             this.services_button.Name = "services_button";
             this.services_button.Size = new System.Drawing.Size(252, 56);
             this.services_button.TabIndex = 4;
@@ -90,7 +90,7 @@
             // 
             this.getStatistics_button.Font = new System.Drawing.Font("Palatino Linotype", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.getStatistics_button.ForeColor = System.Drawing.Color.Maroon;
-            this.getStatistics_button.Location = new System.Drawing.Point(93, 268);
+            this.getStatistics_button.Location = new System.Drawing.Point(23, 268);
             this.getStatistics_button.Name = "getStatistics_button";
             this.getStatistics_button.Size = new System.Drawing.Size(252, 56);
             this.getStatistics_button.TabIndex = 5;
@@ -102,7 +102,7 @@
             // 
             this.AllInfoButton.Font = new System.Drawing.Font("Palatino Linotype", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.AllInfoButton.ForeColor = System.Drawing.Color.Maroon;
-            this.AllInfoButton.Location = new System.Drawing.Point(93, 330);
+            this.AllInfoButton.Location = new System.Drawing.Point(23, 330);
             this.AllInfoButton.Name = "AllInfoButton";
             this.AllInfoButton.Size = new System.Drawing.Size(252, 95);
             this.AllInfoButton.TabIndex = 6;
@@ -114,7 +114,7 @@
             // 
             this.button2.Font = new System.Drawing.Font("Palatino Linotype", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.button2.ForeColor = System.Drawing.Color.Maroon;
-            this.button2.Location = new System.Drawing.Point(523, 82);
+            this.button2.Location = new System.Drawing.Point(523, 202);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(197, 107);
             this.button2.TabIndex = 7;
@@ -126,7 +126,7 @@
             // 
             this.button3.Font = new System.Drawing.Font("Palatino Linotype", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.button3.ForeColor = System.Drawing.Color.Maroon;
-            this.button3.Location = new System.Drawing.Point(523, 206);
+            this.button3.Location = new System.Drawing.Point(523, 315);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(197, 110);
             this.button3.TabIndex = 8;
@@ -134,25 +134,25 @@
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
-            // reminderButton
+            // button4
             // 
-            this.reminderButton.Font = new System.Drawing.Font("Palatino Linotype", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.reminderButton.ForeColor = System.Drawing.Color.Maroon;
-            this.reminderButton.Location = new System.Drawing.Point(523, 330);
-            this.reminderButton.Name = "reminderButton";
-            this.reminderButton.Size = new System.Drawing.Size(197, 95);
-            this.reminderButton.TabIndex = 9;
-            this.reminderButton.Text = "Отправка напоминания";
-            this.reminderButton.UseVisualStyleBackColor = true;
-            this.reminderButton.Click += new System.EventHandler(this.reminderButton_Click);
+            this.button4.Font = new System.Drawing.Font("Palatino Linotype", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button4.ForeColor = System.Drawing.Color.Maroon;
+            this.button4.Location = new System.Drawing.Point(523, 82);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(197, 85);
+            this.button4.TabIndex = 9;
+            this.button4.Text = "Новое посещение";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightPink;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.reminderButton);
+            this.ClientSize = new System.Drawing.Size(800, 541);
+            this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.AllInfoButton);
@@ -178,7 +178,7 @@
         private System.Windows.Forms.Button AllInfoButton;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button reminderButton;
+        private System.Windows.Forms.Button button4;
     }
 }
 

@@ -88,4 +88,6 @@ C:\Users\User\source\repos\NewKursach\obj\Debug\RdlCompile.cache
 C:\Users\User\source\repos\NewKursach\obj\Debug\RdlCompile.compiled
 C:\Users\User\source\repos\NewKursach\obj\Debug\NewKursach.ReportForm1.resources
 C:\Users\User\source\repos\NewKursach\obj\Debug\NewKursach.AllInfoForm.resources
-C:\Users\User\source\repos\NewKursach\obj\Debug\NewKursach.EmailForm.resources
+C:\Users\User\source\repos\NewKursach\obj\Debug\NewKursach.SchedulePointForm.resources
+C:\Users\User\source\repos\NewKursach\obj\Debug\NewKursach.SelectDateForm.resources
+C:\Users\User\source\repos\NewKursach\obj\Debug\NewKursach.VisitsForm.resources

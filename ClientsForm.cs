@@ -7,11 +7,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace NewKursach
 {
     public partial class ClientsForm : Form
     {
+        const string ConnectionString = @"Data Source=desktop-lmqqmnu;Initial Catalog=Kursach;Integrated Security=True";
+
         public ClientsForm()
         {
             InitializeComponent();
@@ -176,6 +179,7 @@ namespace NewKursach
 
         private void button1_Click(object sender, EventArgs e)
         {
+            string querySortStart = " SELECT * FROM Clients ORDER BY ";
             string values = "";
             foreach (var box in this.Controls.OfType<CheckBox>().Reverse())
             {
@@ -191,7 +195,21 @@ namespace NewKursach
             }
             else
             {
-                clientsBindingSource.Sort = values.Remove(values.Length - 2);
+                string querySort = querySortStart + values.Remove(values.Length - 2);
+                try
+                {
+                    SqlConnection sqlconn = new SqlConnection(ConnectionString);
+                    sqlconn.Open();
+                    SqlDataAdapter oda = new SqlDataAdapter(querySort, sqlconn);
+                    DataTable dt = new DataTable();
+                    oda.Fill(dt);
+                    dataGridView1.DataSource = dt;
+                    sqlconn.Close();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(@"Error: " + ex.Message);
+                }
             }
         }
     }

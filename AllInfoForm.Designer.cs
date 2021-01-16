@@ -76,6 +76,7 @@ namespace NewKursach
             this.расписаниеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.категорииToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.посещенияToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.услугиСпециалистаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.clientsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.kursachDataSet)).BeginInit();
@@ -294,6 +295,7 @@ namespace NewKursach
             // 
             this.toolStripTextBox2.AccessibleName = "Position";
             this.toolStripTextBox2.AutoSize = false;
+            this.toolStripTextBox2.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.toolStripTextBox2.Name = "toolStripTextBox2";
             this.toolStripTextBox2.Size = new System.Drawing.Size(50, 23);
             this.toolStripTextBox2.Text = "0";
@@ -371,7 +373,8 @@ namespace NewKursach
             this.услугиToolStripMenuItem,
             this.расписаниеToolStripMenuItem,
             this.категорииToolStripMenuItem,
-            this.посещенияToolStripMenuItem});
+            this.посещенияToolStripMenuItem,
+            this.услугиСпециалистаToolStripMenuItem});
             this.базаДанныхToolStripMenuItem.Name = "базаДанныхToolStripMenuItem";
             this.базаДанныхToolStripMenuItem.Size = new System.Drawing.Size(87, 20);
             this.базаДанныхToolStripMenuItem.Text = "База данных";
@@ -379,44 +382,51 @@ namespace NewKursach
             // клиентыToolStripMenuItem
             // 
             this.клиентыToolStripMenuItem.Name = "клиентыToolStripMenuItem";
-            this.клиентыToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.клиентыToolStripMenuItem.Size = new System.Drawing.Size(192, 22);
             this.клиентыToolStripMenuItem.Text = "Клиенты";
             this.клиентыToolStripMenuItem.Click += new System.EventHandler(this.клиентыToolStripMenuItem_Click);
             // 
             // сотрудникиToolStripMenuItem
             // 
             this.сотрудникиToolStripMenuItem.Name = "сотрудникиToolStripMenuItem";
-            this.сотрудникиToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.сотрудникиToolStripMenuItem.Size = new System.Drawing.Size(192, 22);
             this.сотрудникиToolStripMenuItem.Text = "Сотрудники";
             this.сотрудникиToolStripMenuItem.Click += new System.EventHandler(this.сотрудникиToolStripMenuItem_Click);
             // 
             // услугиToolStripMenuItem
             // 
             this.услугиToolStripMenuItem.Name = "услугиToolStripMenuItem";
-            this.услугиToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.услугиToolStripMenuItem.Size = new System.Drawing.Size(192, 22);
             this.услугиToolStripMenuItem.Text = "Услуги";
             this.услугиToolStripMenuItem.Click += new System.EventHandler(this.услугиToolStripMenuItem_Click);
             // 
             // расписаниеToolStripMenuItem
             // 
             this.расписаниеToolStripMenuItem.Name = "расписаниеToolStripMenuItem";
-            this.расписаниеToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.расписаниеToolStripMenuItem.Size = new System.Drawing.Size(192, 22);
             this.расписаниеToolStripMenuItem.Text = "Расписание";
             this.расписаниеToolStripMenuItem.Click += new System.EventHandler(this.расписаниеToolStripMenuItem_Click);
             // 
             // категорииToolStripMenuItem
             // 
             this.категорииToolStripMenuItem.Name = "категорииToolStripMenuItem";
-            this.категорииToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.категорииToolStripMenuItem.Size = new System.Drawing.Size(192, 22);
             this.категорииToolStripMenuItem.Text = "Категории";
             this.категорииToolStripMenuItem.Click += new System.EventHandler(this.категорииToolStripMenuItem_Click);
             // 
             // посещенияToolStripMenuItem
             // 
             this.посещенияToolStripMenuItem.Name = "посещенияToolStripMenuItem";
-            this.посещенияToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.посещенияToolStripMenuItem.Size = new System.Drawing.Size(192, 22);
             this.посещенияToolStripMenuItem.Text = "Посещения";
             this.посещенияToolStripMenuItem.Click += new System.EventHandler(this.посещенияToolStripMenuItem_Click);
+            // 
+            // услугиСпециалистаToolStripMenuItem
+            // 
+            this.услугиСпециалистаToolStripMenuItem.Name = "услугиСпециалистаToolStripMenuItem";
+            this.услугиСпециалистаToolStripMenuItem.Size = new System.Drawing.Size(192, 22);
+            this.услугиСпециалистаToolStripMenuItem.Text = "Услуги специалистов";
+            this.услугиСпециалистаToolStripMenuItem.Click += new System.EventHandler(this.услугиСпециалистаToolStripMenuItem_Click);
             // 
             // AllInfoForm
             // 
@@ -498,5 +508,6 @@ namespace NewKursach
         private System.Windows.Forms.ToolStripMenuItem расписаниеToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem категорииToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem посещенияToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem услугиСпециалистаToolStripMenuItem;
     }
 }
